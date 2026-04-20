@@ -1,0 +1,241 @@
+/* الألوان والهوية البصرية */
+:root {
+    --green: #2d5a3f;
+    --green-dark: #1b4332;
+    --orange: #ff7a00;
+    --orange-light: #fff3e6;
+    --light-grey: #f4f7f6;
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* إعدادات التصفير والخطوط */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease; /* سرعة استجابة الحركات */
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl;
+    background: var(--light-grey);
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* القائمة العلوية - Navbar */
+nav {
+    background: var(--white);
+    padding: 10px 0;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo { 
+    height: 60px; 
+    object-fit: contain;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--green);
+    margin: 0 15px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.btn-login {
+    background: var(--orange);
+    color: white !important;
+    padding: 10px 25px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
+}
+
+.btn-login:hover {
+    background: var(--green);
+    transform: translateY(-2px);
+}
+
+/* قسم الهيرو - Hero Section */
+.hero {
+    background: linear-gradient(rgba(45, 90, 63, 0.75), rgba(45, 90, 63, 0.75)),
+    url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1470&auto=format&fit=crop');
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h1 { font-size: 42px; margin-bottom: 15px; }
+.hero p { font-size: 18px; margin-bottom: 30px; }
+
+.btn-primary-orange {
+    background: var(--orange);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.btn-secondary-green {
+    border: 2px solid white;
+    color: white;
+    padding: 13px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-right: 15px;
+    display: inline-block;
+}
+
+.btn-primary-orange:hover, .btn-secondary-green:hover {
+    transform: scale(1.05);
+    background: white;
+    color: var(--green);
+}
+
+/* واجهات لوحات التحكم - Dashboards */
+.dash-body { display: flex; min-height: 100vh; }
+
+.sidebar {
+    width: 260px;
+    background: var(--green);
+    color: white;
+    padding: 30px 20px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.sidebar li {
+    padding: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 12px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar li.active { background: var(--orange); font-weight: bold; }
+.sidebar li:hover:not(.active) { background: var(--green-dark); }
+
+/* الخرائط والبطاقات - Maps & Cards */
+.map-layout { display: flex; height: 100vh; width: 100%; }
+
+.side-panel {
+    width: 380px;
+    background: white;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.05);
+}
+
+.offer-card {
+    background: white;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.offer-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--orange);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.badge {
+    font-size: 11px;
+    padding: 4px 10px;
+    color: white;
+    border-radius: 6px;
+    font-weight: bold;
+}
+.sale { background: var(--green); }
+.charity { background: var(--orange); }
+
+/* شبكات العرض - Grids */
+.stats-grid, .features-grid, .competitors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.stat-box, .feature-box, .comp-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.our-edge {
+    background: var(--orange-light);
+    padding: 15px;
+    border-radius: 10px;
+    border-right: 4px solid var(--orange);
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* 📱 استجابة الجوال - Responsive Design */
+@media (max-width: 768px) {
+    .navbar { padding: 10px; }
+    nav ul { display: none; } /* يفضل استبدالها بقائمة هامبرغر برمجياً */
+    
+    .hero h1 { font-size: 28px; }
+    .hero { height: auto; padding: 60px 20px; }
+    
+    .map-layout { flex-direction: column; }
+    .side-panel { width: 100%; height: 50vh; }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        padding: 10px;
+        justify-content: space-around;
+        z-index: 3000;
+    }
+    
+    .sidebar li { margin-bottom: 0; padding: 10px; font-size: 12px; }
+    
+    .btn-primary-orange, .btn-secondary-green {
+        display: block;
+        margin: 10px 0;
+        width: 100%;
+    }
+}

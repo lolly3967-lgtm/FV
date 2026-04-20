@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة لا تهدرها | الرئيسية</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --green: #2d5a3f;
+            --orange: #ff7a00;
+            --logo-bg: #fdfdfd;
+        }
+        body {
+            margin: 0;
+            font-family: 'Tajawal', sans-serif;
+            background: var(--logo-bg);
+            color: #333;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Navbar */
+        nav {
+            background: var(--logo-bg);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* للسماح بالعناصر بالنزول إذا ضاقت الشاشة */
+        }
+        .logo { width: 100px; transition: 0.3s; }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+        nav a:hover { color: var(--orange); }
+        .btn-login {
+            background: var(--orange);
+            color: #fff !important;
+            padding: 8px 15px;
+            border-radius: 20px;
+            white-space: nowrap;
+            font-size: 14px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(rgba(253,253,253,0.8), rgba(253,253,253,0.8)),
+                        url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1470&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero h1 { 
+            font-size: clamp(24px, 8vw, 42px); 
+            color: var(--green); 
+            margin-bottom: 20px; 
+            line-height: 1.3;
+        }
+        .hero p { 
+            font-size: clamp(15px, 4vw, 19px); 
+            color: #555; 
+            margin-bottom: 30px; 
+            max-width: 600px;
+            margin-inline: auto;
+        }
+
+        .btn-primary-orange {
+            background: var(--orange);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 30px;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 122, 0, 0.3);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .about h2 {
+            font-size: 28px;
+            color: var(--green);
+            margin-bottom: 25px;
+        }
+        .about p {
+            max-width: 750px;
+            margin: auto;
+            color: #666;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e1e1e;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-box h4 { color: var(--orange); margin-bottom: 20px; }
+        .footer-box p, .footer-box a { 
+            font-size: 14px; 
+            opacity: 0.8; 
+            line-height: 2; 
+            display: block; 
+            text-decoration: none; 
+            color: white;
+        }
+        
+        /* --- استعلامات الوسائط (Media Queries) للهواتف --- */
+
+        @media (max-width: 768px) {
+            .navbar {
+                justify-content: center; /* توسيط الشعار والروابط في الجوال */
+                gap: 20px;
+            }
+            .logo { width: 80px; }
+            .hero { padding: 60px 15px; }
+            .about { padding: 50px 0; }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                gap: 10px;
+            }
+            nav a {
+                font-size: 13px;
+            }
+            .btn-login {
+                padding: 6px 12px;
+            }
+            .footer-content {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="container navbar">
+            <img src="لاتهدرها .jpg.jpeg" class="logo" alt="شعار لا تهدرها">
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="competitors.html">المنافسون</a></li>
+                <li><a href="login.html" class="btn-login">دخول / تسجيل</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>كل لقمة لها قيمة</h1>
+            <p>نربط فائض الطعام من مطاعم جدة بالجمعيات والمحتاجين بطريقة ذكية وسريعة</p>
+            <a href="login.html" class="btn-primary-orange">ابدأ الآن مجانًا</a>
+        </div>
+    </header>
+
+    <section class="about">
+        <div class="container">
+            <h2>من نحن</h2>
+            <p>
+                منصة "لا تهدرها" هي مبادرة تقنية تهدف إلى تقليل هدر الطعام في مدينة جدة
+                من خلال ربط المطاعم التي لديها فائض مع الجمعيات الخيرية والأفراد، لضمان وصول الطعام لمن يستحقه.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-box">
+                    <h4>عن المنصة</h4>
+                    <p>مشروع ريادي لتحويل فائض الطعام لمورد اجتماعي مستدام في مدينة جدة.</p>
+                </div>
+                <div class="footer-box">
+                    <h4>تواصل معنا</h4>
+                    <p>📧 info@latahderha.com</p>
+                    <p>📍 جدة، المملكة العربية السعودية</p>
+                </div>
+                <div class="footer-box">
+                    <h4>روابط سريعة</h4>
+                    <a href="index.html">الرئيسية</a>
+                    <a href="login.html">تسجيل الدخول</a>
+                </div>
+            </div>
+            <div class="copyright" style="text-align: center; border-top: 1px solid #333; padding-top: 20px; font-size: 12px; opacity: 0.5;">
+                &copy; 2026 منصة لا تهدرها. جميع الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

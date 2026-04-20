@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - لا تهدرها</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --orange: #ff7a00;
+            --green: #2e7d32;
+            --bg-light: #fdfdfd;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Tajawal', sans-serif;
+            background: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .top-bar {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .btn-back {
+            text-decoration: none;
+            background: #fff;
+            color: var(--orange);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+            border: 1px solid var(--orange);
+        }
+
+        .btn-back:hover {
+            background: var(--orange);
+            color: white;
+        }
+
+        .login-container {
+            width: 90%;
+            max-width: 450px;
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            box-sizing: border-box;
+            margin-bottom: 40px;
+        }
+
+        h2 { margin-top: 0; font-size: 26px; color: #333; }
+        p { color: #777; margin-bottom: 30px; font-size: 15px; }
+
+        .input-box { width: 100%; margin-bottom: 15px; }
+
+        input {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 1.5px solid #eee;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+            outline: none;
+            transition: 0.3s;
+            font-size: 15px;
+        }
+
+        input:focus {
+            border-color: var(--orange);
+            background: #fffcf9;
+        }
+
+        .login-btn {
+            width: 100%;
+            background: var(--orange);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            margin: 10px 0 25px;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 122, 0, 0.2);
+        }
+
+        .login-btn:hover { background: #e66e00; transform: translateY(-2px); }
+
+        .user-selection {
+            display: grid;
+            grid-template-columns: 1fr; /* ترتيب عمودي افتراضي */
+            gap: 12px;
+        }
+
+        .user-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #555;
+            transition: 0.3s;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .user-box:hover {
+            background: #fff3e6;
+            border-color: var(--orange);
+            color: var(--orange);
+        }
+
+        /* --- تعديلات التجاوب --- */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 20px;
+                margin-top: 10px;
+            }
+            h2 { font-size: 22px; }
+            .btn-back { padding: 6px 14px; font-size: 13px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="top-bar">
+    <a href="index.html" class="btn-back">⬅️ العودة للرئيسية</a>
+</div>
+
+<div class="login-container">
+    <h2>مرحباً بك 👋</h2>
+    <p>سجّل دخولك للوصول إلى لوحة التحكم</p>
+
+    <div class="input-box">
+        <input type="email" placeholder="البريد الإلكتروني" required>
+    </div>
+
+    <div class="input-box">
+        <input type="password" placeholder="كلمة المرور" required>
+    </div>
+
+    <button class="login-btn">تسجيل الدخول</button>
+
+    <div style="display: flex; align-items: center; margin-bottom: 25px;">
+        <hr style="flex: 1; border: 0; border-top: 1px solid #eee;">
+        <span style="padding: 0 10px; color: #bbb; font-size: 12px;">أو اختر نوع الحساب</span>
+        <hr style="flex: 1; border: 0; border-top: 1px solid #eee;">
+    </div>
+
+    <div class="user-selection">
+      <a href="restaurant-dash.html" class="user-box">🏪 مطعم / كافيه</a>
+      <a href="charity-dash.html" class="user-box">🤝 جمعية خيرية</a>
+      <a href="user-dash.html" class="user-box">👤 مستخدم</a>
+    </div>
+</div>
+
+</body>
+</html>
